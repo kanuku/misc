@@ -1,4 +1,2 @@
-tutorials
+Miscellaneous
 =========
-
-Repository for the tutorials
