@@ -1,0 +1,14 @@
+exit
+submit benibadboy@hotmail.com pA5uezaXhp
+   Compilation completed in 11.053 s
+[warn] /Users/fernando/Documents/Courses/Scala/forcomp/src/main/scala/forcomp/Anagrams.scala:183: postfix operator sum should be enabled
+[warn] by making the implicit value scala.language.postfixOps visible.
+[warn] This can be achieved by adding the import clause 'import scala.language.postfixOps'
+[warn] or by setting the compiler option -language:postfixOps.
+[warn] See the Scala docs for value scala.language.postfixOps for a discussion
+[warn] why the feature should be explicitly enabled.
+[warn]           occurenceSize = (in map (x => x._2) sum)
+[warn]                                               ^
+[warn] one warning found
+submit benibadboy@hotmail.com pA5uezaXhp
+exit

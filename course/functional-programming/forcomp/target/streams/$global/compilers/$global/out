@@ -1,0 +1,33 @@
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.10.2[0m
+[0m[[0mdebug[0m] [0mOther repositories:[0m
+[0m[[0mdebug[0m] [0mDefault repositories:[0m
+[0m[[0mdebug[0m] [0m	FileRepository(local,FileConfiguration(true,None),Patterns(ivyPatterns=List(${ivy.home}/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=List(${ivy.home}/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false))[0m
+[0m[[0mdebug[0m] [0mOther repositories:[0m
+[0m[[0mdebug[0m] [0mDefault repositories:[0m
+[0m[[0mdebug[0m] [0m	FileRepository(local,FileConfiguration(true,None),Patterns(ivyPatterns=List(${ivy.home}/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=List(${ivy.home}/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false))[0m
+[0m[[0minfo[0m] [0m'compiler-interface' not yet compiled for Scala 2.10.2. Compiling...[0m
+[0m[[0mdebug[0m] [0mPlain interface to Scala compiler 2.10.2  with arguments: [0m
+[0m[[0mdebug[0m] [0m	-nowarn[0m
+[0m[[0mdebug[0m] [0m	-d[0m
+[0m[[0mdebug[0m] [0m	/var/folders/60/9wmg6lqs20bd9zmlrrw4j_zw0000gp/T/sbt_faef1091[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	/Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_60.jdk/Contents/Home/jre/classes:/Users/fernando/.sbt/boot/scala-2.10.2/lib/scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	/Users/fernando/.sbt/boot/scala-2.9.2/org.scala-sbt/sbt/0.12.4/xsbti/interface-0.12.4.jar:/Users/fernando/.sbt/boot/scala-2.9.2/org.scala-sbt/sbt/0.12.4/compiler-interface-src/compiler-interface-src-0.12.4.jar:/Users/fernando/.sbt/boot/scala-2.10.2/lib/scala-compiler.jar:/Users/fernando/.sbt/boot/scala-2.10.2/lib/jansi.jar:/Users/fernando/.sbt/boot/scala-2.10.2/lib/scala-reflect.jar:/Users/fernando/.sbt/boot/scala-2.10.2/lib/jline.jar[0m
+[0m[[0mdebug[0m] [0m	/var/folders/60/9wmg6lqs20bd9zmlrrw4j_zw0000gp/T/sbt_311322a3/API.scala[0m
+[0m[[0mdebug[0m] [0m	/var/folders/60/9wmg6lqs20bd9zmlrrw4j_zw0000gp/T/sbt_311322a3/Analyzer.scala[0m
+[0m[[0mdebug[0m] [0m	/var/folders/60/9wmg6lqs20bd9zmlrrw4j_zw0000gp/T/sbt_311322a3/Command.scala[0m
+[0m[[0mdebug[0m] [0m	/var/folders/60/9wmg6lqs20bd9zmlrrw4j_zw0000gp/T/sbt_311322a3/CompilerInterface.scala[0m
+[0m[[0mdebug[0m] [0m	/var/folders/60/9wmg6lqs20bd9zmlrrw4j_zw0000gp/T/sbt_311322a3/ConsoleInterface.scala[0m
+[0m[[0mdebug[0m] [0m	/var/folders/60/9wmg6lqs20bd9zmlrrw4j_zw0000gp/T/sbt_311322a3/DelegatingReporter.scala[0m
+[0m[[0mdebug[0m] [0m	/var/folders/60/9wmg6lqs20bd9zmlrrw4j_zw0000gp/T/sbt_311322a3/Log.scala[0m
+[0m[[0mdebug[0m] [0m	/var/folders/60/9wmg6lqs20bd9zmlrrw4j_zw0000gp/T/sbt_311322a3/Message.scala[0m
+[0m[[0mdebug[0m] [0m	/var/folders/60/9wmg6lqs20bd9zmlrrw4j_zw0000gp/T/sbt_311322a3/ScaladocInterface.scala[0m
+[0m[[0minfo[0m] [0m  Compilation completed in 11.053 s[0m
+[0m[[0mdebug[0m] [0mOther repositories:[0m
+[0m[[0mdebug[0m] [0mDefault repositories:[0m
+[0m[[0mdebug[0m] [0m	FileRepository(local,FileConfiguration(true,None),Patterns(ivyPatterns=List(${ivy.home}/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=List(${ivy.home}/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false))[0m
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.10.2[0m
+[0m[[0mdebug[0m] [0mOther repositories:[0m
+[0m[[0mdebug[0m] [0mDefault repositories:[0m
+[0m[[0mdebug[0m] [0m	FileRepository(local,FileConfiguration(true,None),Patterns(ivyPatterns=List(${ivy.home}/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=List(${ivy.home}/local/[organisation]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false))[0m
