@@ -46,9 +46,9 @@
 // C-x 1   : Will leave olny one window  
 // C-x 2   : Will make a horizontal cut and show a secondary window  
 // C-x 3   : Will make a vertical cut and show a secundary window  
-// 
-// Search commands:
-// ----------------
+//  
+// Search commands:  
+// ----------------  
 // C-s     : searches forward as you type. Beware \n is not newline, it is C-j.  
 //           When you are within a search, C-s will find tje nex occurance.  
 //  
