@@ -1,0 +1,13 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+
+GET    /assets/*file    controllers.Assets.at(path="/public", file)
+GET    /                controllers.Application.index
+GET    /products        controllers.Products.list
+GET    /products/new    controllers.Products.newProduct
+GET    /products/:ean   controllers.Products.show(ean: Long)
+GET    /barcode/:ean    controllers.Barcodes.barcode(ean: Long)
+POST   /products        controllers.Products.save
