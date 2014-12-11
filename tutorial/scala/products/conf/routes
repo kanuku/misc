@@ -4,10 +4,11 @@
 
 # Home page
 
-GET    /assets/*file    controllers.Assets.at(path="/public", file)
-GET    /                controllers.Application.index
-GET    /products        controllers.Products.list
-GET    /products/new    controllers.Products.newProduct
-GET    /products/:ean   controllers.Products.show(ean: Long)
-GET    /barcode/:ean    controllers.Barcodes.barcode(ean: Long)
-POST   /products        controllers.Products.save
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+GET     /                           controllers.Application.home()
+GET     /products                   controllers.Products.list(page: Int ?= 1)
+GET     /product/:ean               controllers.Products.details(ean: Long)
+GET     /product/:ean/edit          controllers.Products.edit(ean: Long)
+PUT     /product/:ean               controllers.Products.update(ean: Long)
+GET     /product/:ean               controllers.Products.details(ean: Long)

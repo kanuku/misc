@@ -2,12 +2,16 @@ package models
 
 import java.util.HashMap
 import scala.collection.mutable.HashMap
+import anorm.SQL
+import anorm.SqlQuery
 
 case class Product(
   ean: Long, name: String, description: String)
 
 object Product {
 
+  
+  
   var products = Set(
     Product(5010255079763L, "Paperclips Large",
       "Large Plain Pack of 1000"),
