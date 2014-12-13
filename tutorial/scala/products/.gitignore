@@ -1,10 +1,11 @@
-logs
+logs	
 project/project
 project/target
 target
 tmp
 .history
 dist
+.cache
 /.idea
 /*.iml
 /out
@@ -14,3 +15,4 @@ dist
 /RUNNING_PID
 /.settings
 /bin
+/logs
