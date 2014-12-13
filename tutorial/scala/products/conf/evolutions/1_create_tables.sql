@@ -1,14 +1,19 @@
 #########################
 # --- !Ups
 #########################
+
 CREATE TABLE products (
     id long,
     ean long,
     name varchar,
     description varchar);
+
+
 CREATE TABLE warehouses (
     id long,
     name varchar);
+    
+
 CREATE TABLE stock_items (
     id long,
     product_id long,

@@ -6,7 +6,7 @@
 
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
-GET     /                           controllers.Application.home()
+GET     /                           controllers.Application.index()
 GET     /products                   controllers.Products.list(page: Int ?= 1)
 GET     /product/:ean               controllers.Products.details(ean: Long)
 GET     /product/:ean/edit          controllers.Products.edit(ean: Long)

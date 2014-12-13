@@ -19,4 +19,6 @@ object Products extends Controller {
 }
   def update(ean: Long) = Action {
     NotImplemented
-} }
+}
+
+  }
