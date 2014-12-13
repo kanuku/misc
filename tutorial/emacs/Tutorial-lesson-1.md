@@ -50,20 +50,30 @@
 || Search commands:  
 || ----------------  
 || C-s     : searches forward as you type. Beware \n is not newline, it is C-j.  
-||           When you are within a search, C-s will find tje nex occurance.  
+||           When you are within a search, C-s will find tje nex occurance.   
 ||  
-|| You can always hit C-g to quit the search and return where you were.  
+||           You can always hit C-g to quit the search and return where you were.  
 ||  
 || M-C-s   : search a regexpg  
 ||  
-|| Again, hitting C-s while you are in regexp search will find the next occurance.  
-|| C-g will quit and go back to where your cursors was.  
+||           Again, hitting C-s while you are in regexp search will find the next occurance.  
+||           C-g will quit and go back to where your cursors was.  
 ||  
 || M-%     : searches and replaces.  
 ||  
 || M-s o   : searches and show all the occurrence in an *Occur* buffer. You can click on  
 ||           the lines to jump to those lines.  
+||  
 || M-x grep: greps a pattern in the files you specify and shows the result in a *Grep*  
-             buffer. It is similra to 'occur' as you can click/enter on the lines to go  
+||             buffer. It is similra to 'occur' as you can click/enter on the lines to go  
 ||           to that file.  
-|| M-x rgrep: will recursively grep in a directory (all the files and subdirectories)
+|| M-x rgrep: will recursively grep in a directory (all the files and subdirectories)  
+|| 
+|| Commands:
+|| ---------
+|| Emacs understands elisp. It is a dialect of lisp.
+|| M-x command-name : Will execute the command.
+|| M-x pwd   : Prints the working directory
+
+  int a = 3;
+      int b= 5; 
