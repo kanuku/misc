@@ -10,15 +10,19 @@ import play.api.mvc.Flash
 object Products extends Controller {
   def list(pageNumber: Int) = Action {
     NotImplemented
-}
+  }
   def details(ean: Long) = Action {
     NotImplemented
-}
+  }
   def edit(ean: Long) = Action {
     NotImplemented
-}
+  }
   def update(ean: Long) = Action {
     NotImplemented
-}
-
   }
+
+  def save = Action {
+    NotImplemented
+  }
+
+}

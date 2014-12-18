@@ -1,63 +1,65 @@
 package models
 
-import java.util.HashMap
-import scala.collection.mutable.HashMap
-import anorm.SQL
-import anorm.SqlQuery
-import play.api.Play.current
-import play.api.db.DB
+import org.squeryl.KeyedEntity
+import org.squeryl.PrimitiveTypeMode._
+import org.squeryl.Table
+import org.squeryl.Query
+import collection.Iterable
+import org.squeryl.dsl.OneToMany
 
 case class Product(
   id: Long,
-  ean: Long, name: String, description: String)
+  ean: Long,
+  name: String,
+  description: String) extends KeyedEntity[Long] {
+  lazy val stockItems: OneToMany[StockItem] =
+    Database.productToStockItems.left(this)
+}
 
 object Product {
-
-  def findAll = getAll
-
-  def findByEan(ean: Long) = ???
-
-  def add(product: Product) = ???
-
-  val sql: SqlQuery = SQL("select * from products order by name asc")
-  def getAll: List[Product] = DB.withConnection {
-    implicit connection =>
-      sql().map(row =>
-        Product(row[Long]("id"), row[Long]("ean"),
-          row[String]("name"), row[String]("description"))).toList
+  import Database.{ productsTable, stockItemsTable }
+  def allQ: Query[Product] = from(productsTable) {
+    product => select(product) orderBy (product.name desc)
   }
 
-  def getAllWithPatterns: List[Product] = DB.withConnection {
-    implicit connection =>
-      import anorm.Row
-      sql().collect {
-        case Row(Some(id: Long), Some(ean: Long),
-          Some(name: String), Some(description: String)) =>
-          Product(id, ean, name, description)
-      }.toList
+  def findAll: Iterable[Product] = inTransaction {
+    allQ.toList
   }
 
-  import anorm.RowParser
-  val productParser: RowParser[Product] = {
-    import anorm.~
-    import anorm.SqlParser._
-    long("id") ~
-      long("ean") ~
-      str("name") ~
-      str("description") map {
-        case id ~ ean ~ name ~ description =>
-          Product(id, ean, name, description)
-      }
+  def productsInWarehouse(warehouse: Warehouse) = {
+    join(productsTable, stockItemsTable)((product, stockItem) =>
+      where(stockItem.warehouseId === warehouse.id).
+        select(product).
+        on(stockItem.productId === product.id))
   }
 
-  import anorm.ResultSetParser
-  val productsParser: ResultSetParser[List[Product]] = {
-    productParser *
+  def productsInWarehouseByName(name: String, warehouse: Warehouse): Query[Product] = {
+    from(productsInWarehouse(warehouse)) { product =>
+      where(product.name like name).select(product)
+    }
   }
 
-  def getAllWithParser: List[Product] = DB.withConnection {
-    implicit connection =>
-      sql.as(productsParser)
+  def insert(product: Product): Product = inTransaction {
+    productsTable.insert(product)
+  }
+  def update(product: Product) {
+    inTransaction { productsTable.update(product) }
   }
 
+  def addNewProductGood(product: Product, stockItem: StockItem) {
+    transaction {
+      productsTable.insert(product)
+      stockItemsTable.insert(stockItem)
+    }
+  }
+
+  def getStockItems(product: Product) =
+    inTransaction {
+      product.stockItems.toList
+    }
+
+  def getLargeStockQ(product: Product, quantity: Long) =
+    from(product.stockItems)(s =>
+      where(s.quantity gt quantity)
+        select (s))
 }
