@@ -1,11 +1,22 @@
 package models
 
 import org.squeryl.KeyedEntity
-import org.squeryl.PrimitiveTypeMode._
-import org.squeryl.Table
+import org.squeryl.PrimitiveTypeMode.from
+import org.squeryl.PrimitiveTypeMode.inTransaction
+import org.squeryl.PrimitiveTypeMode.join
+import org.squeryl.PrimitiveTypeMode.long2ScalarLong
+import org.squeryl.PrimitiveTypeMode.orderByArg2OrderByExpression
+import org.squeryl.PrimitiveTypeMode.queryable2RightInnerJoinedQueryable
+import org.squeryl.PrimitiveTypeMode.select
+import org.squeryl.PrimitiveTypeMode.string2ScalarString
+import org.squeryl.PrimitiveTypeMode.transaction
+import org.squeryl.PrimitiveTypeMode.typedExpression2OrderByArg
+import org.squeryl.PrimitiveTypeMode.where
 import org.squeryl.Query
-import collection.Iterable
 import org.squeryl.dsl.OneToMany
+
+import Database.productsTable
+import Database.stockItemsTable
 
 case class Product(
   id: Long,
@@ -22,7 +33,7 @@ object Product {
     product => select(product) orderBy (product.name desc)
   }
 
-  def findAll: Iterable[Product] = inTransaction {
+  def findAll: List[Product] = inTransaction {
     allQ.toList
   }
 

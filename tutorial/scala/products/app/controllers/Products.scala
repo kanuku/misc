@@ -1,13 +1,16 @@
 package controllers
 
-import play.api.data.Form
-import play.api.data.Forms.{ mapping, longNumber, nonEmptyText }
-import play.api.i18n.Messages
-import play.api.mvc.{ Action, Controller }
+import play.api.data.Forms.longNumber
+import play.api.data.Forms.mapping
+import play.api.data.Forms.nonEmptyText
+import play.api.mvc.Action
+import play.api.mvc.Controller
 import models.Product
-import play.api.mvc.Flash
+import play.mvc.Http.Request
+import play.mvc.Http.RequestHeader
 
-object Products extends Controller {
+object Products extends Controller with WithCart {
+
   def list(pageNumber: Int) = Action {
     NotImplemented
   }
@@ -23,6 +26,12 @@ object Products extends Controller {
 
   def save = Action {
     NotImplemented
+  }
+
+  def catalog() = Action {
+    implicit request =>
+      val products = Product.findAll
+      Ok(views.html.products.catalog(products))
   }
 
 }

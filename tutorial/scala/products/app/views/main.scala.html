@@ -1,0 +1,32 @@
+@(title:String = "paperclips.example.com")(cart:Cart)(content: Html)
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>@title</title>
+    <link rel="stylesheet" type="text/css" media="screen" href='@routes.Assets.at("stylesheets/bootstrap.css")'>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+  </head>
+  <body>
+  <div id="header">
+      <h1>Paper-clip web shop</h1>
+      <div id="cartSummary">
+        <p>@cart.productCount match {
+          case 0 => {
+            Your shopping cart is empty.
+          }
+          case n => {
+            You have @n items in your shopping cart.
+          } 
+        }</p>
+      </div>
+    </div>
+    <div class="screenshot">
+       @navigation()
+      <div class="container">
+        @content
+      </div>
+    </div>
+  </body>
+</html>
+
+
