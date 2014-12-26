@@ -1,0 +1,10 @@
+@(implicit flash: Flash)
+  @if(flash.get("success").isDefined){
+    <div class="alert alert-success">
+      @flash.get("success")
+    </div> }
+  @if(flash.get("error").isDefined){
+    <div class="alert alert-error">
+      @flash.get("error")
+    </div>
+  }

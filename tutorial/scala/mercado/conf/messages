@@ -1,0 +1,10 @@
+application.name = Item catalog
+
+name = Name
+description = Description
+
+ 
+ 
+# ITEMS
+items.form=Item
+item.new=Test

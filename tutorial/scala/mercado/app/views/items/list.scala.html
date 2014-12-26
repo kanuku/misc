@@ -1,0 +1,23 @@
+@(items: List[Item])(implicit flash: Flash, lang: Lang)
+@main(Messages("application.name")) {
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(item <-items) {
+      <tr>
+        <td>@item.name</td>
+        <td>@item.description</td>
+        <td><a href="@controllers.routes.Items.show(item.id)">details</a></td> @*<td><a
+      href="@controllers.routes.Items.edit(item)">edit</a></td>*@
+      </tr>
+      }
+    </tbody>
+  </table>
+  <a href="@controllers.routes.Items.newItem()" class="btn btn-default btn-sm">@Messages("item.new.command") </a>
+}

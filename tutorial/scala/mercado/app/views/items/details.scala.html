@@ -1,0 +1,14 @@
+@(item: Item)(implicit flash: Flash, lang: Lang)
+@main(Messages("products.details", item.name)){
+  @if(item!=null){
+     <h2>
+       @Messages("item.details", item.name)
+    </h2>
+    <dl class="dl-horizontal">
+      <dt>@Messages("name")</dt>
+      <dd>@item.name</dd>
+      <dt>@Messages("description"):</dt>
+      <dd>@item.description</dd>
+    </dl>
+  }
+}
