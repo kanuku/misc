@@ -1,7 +1,7 @@
 package controllers
 
 import models.Item
-import models.ItemDAO
+import dao.ItemDAO
 import play.api.data._
 import play.api.data.Form
 import play.api.data.Forms._
@@ -43,7 +43,7 @@ object Items extends Controller {
       },
       success = { newItem =>
         val result=ItemDAO.insert(newItem)
-        Redirect(routes.Items.show(result.id))
+        Redirect(routes.Items.list)
       })
   }
 
