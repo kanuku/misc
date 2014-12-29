@@ -1,4 +1,7 @@
 package dao
+import dao.Database._
+import models._
+import models.Item
 import org.squeryl.KeyedEntity
 import org.squeryl.PrimitiveTypeMode.from
 import org.squeryl.PrimitiveTypeMode.inTransaction
@@ -7,31 +10,30 @@ import org.squeryl.PrimitiveTypeMode.orderByArg2OrderByExpression
 import org.squeryl.PrimitiveTypeMode.select
 import org.squeryl.PrimitiveTypeMode.typedExpression2OrderByArg
 import org.squeryl.PrimitiveTypeMode.where
-import models.Database._
-import models._
+
 object ItemDAO {
 
   /**
-   * Products sorted by id.
+   * Items sorted by id.
    */
-  def allQ = from(itemsTable)(product =>
-    select(product) orderBy (product.id desc))
+  def allQ = from(itemsTable)(item =>
+    select(item) orderBy (item.id desc))
   /**
-   * Query that finds all products
+   * Query that finds all Items
    */
   def findAll = inTransaction {
     allQ.toList
   }
 
   /**
-   * Adds a product to the catalog.
+   * Adds a item to the catalog.
    */
-  def insert(product: Item) = inTransaction {
-    itemsTable.insert(product.copy())
+  def insert(item: Item) = inTransaction {
+    itemsTable.insert(item.copy())
   }
 
   /**
-   * The product with the given id.
+   * The item with the given id.
    */
   def findById(id: Long) = inTransaction {
     from(itemsTable)(p =>
@@ -40,10 +42,10 @@ object ItemDAO {
   }
 
   /**
-   * Updates a product in the catalog.
+   * Updates a item in the catalog.
    */
-  def update(product: Item) =
+  def update(item: Item) =
     inTransaction {
-      itemsTable.update(product)
+      itemsTable.update(item)
     }
 }

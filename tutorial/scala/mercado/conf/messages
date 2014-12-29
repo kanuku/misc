@@ -1,10 +1,31 @@
 application.name = Item catalog
 
-name = Name
-description = Description
 
  
  
 # ITEMS
-items.form=Item
-item.new=Test
+item.edit.title=Item
+item.edit.new=Create new item
+item.edit.name = Name
+item.edit.description = Description
+item.edit.command.submit=Save
+item.edit.command.cancel=Cancel
+
+# USER
+users.edit.title=Create/Edit user
+users.edit.new=Register new user
+user.edit.username=Username
+user.edit.email=E-mail address
+user.edit.email2=Repeat the e-mail address
+user.edit.password=Type in your password
+user.edit.password2=Repeat your password
+user.edit.command.submit=Register
+user.edit.command.cancel=Cancel
+
+# LOGIN
+login.title=Sign in
+
+login.username=Username
+login.password=Type in your password
+login.command.submit=Login
+login.command.cancel=Cancel

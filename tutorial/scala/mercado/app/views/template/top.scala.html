@@ -1,0 +1,34 @@
+@()
+<div class="row">
+  <div class="col-md-6 col-sm-6 col-xs-6">
+    <div class="logo">
+      <h1>
+        <a href="@routes.Application.index">My<span>app</span>
+        </a>
+      </h1>
+      <p>My bootstrap demo Application</p>
+    </div>
+  </div>
+  <div class="col-md-6 col-sm-6 col-xs-6">
+  
+    <div class="account">
+      <ul>
+        <li id="your-account">
+          <div class="hidden-xs">
+            <p>
+              <a href="@routes.Authorization.index">log in</a>
+            </p>
+          </div>
+
+        </li>
+        <li>
+          <div class="hidden-xs">
+            <p>
+              <a href="@routes.Users.index">Register</a>
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+@(userForm: Form[(String,String)])(implicit flash: Flash, lang: Lang) 
+@import helper._ 
+@import helper.twitterBootstrap._
+
+@main(Messages("login.title")){
+
+<h2>@Messages("login.title")</h2>
+
+<form class="form-horizontal" action="@routes.Authorization.authenticate" method="post">
+  <div class="form-group">
+    <label class="control-label col-xs-3" for="name">@Messages("login.username")</label>
+    <div class="col-xs-9">
+      <input type="text" class="form-control" id="name" name="username">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-xs-3" for="name">@Messages("login.password")</label>
+    <div class="col-xs-9">
+      <input type="password" class="form-control" id="name" name="password">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-xs-offset-3 col-xs-9">
+      <input type="submit" class="btn btn-primary" value='@Messages("login.command.submit")'> 
+      <a href="@routes.Users.index()" class="btn btn-default btn-sm">@Messages("login.command.cancel") </a>  
+    </div>
+  </div>
+</form>
+ }

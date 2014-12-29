@@ -7,7 +7,7 @@
               <li class="active"><a href="@routes.Application.index"><span class="glyphicon glyphicon-home"> </span>   </a></li>
               <!-- <li><a href="#">Advertise</a></li> -->
               <li class="dropdown">
-                <a href="@controllers.routes.Items.list" data-toggle="dropdown" class="dropdown-toggle">Items<b class="caret"></b></a>
+                <a href="@controllers.Items.list" data-toggle="dropdown" class="dropdown-toggle">Items<b class="caret"></b></a>
                 <ul class="dropdown-menu" id="item-Menu">
                   <!-- <li>
                     <a href="#">Items <b class="caret"></b></a>
@@ -16,9 +16,9 @@
                       <li><a href="#">Add new Item</a></li>
                     </ul>
                   </li> -->
-                  <li><a href="@controllers.routes.Items.newItem()">Add new</a></li>
+                  <li><a href="@routes.Items.edit()">Add new</a></li>
                   <li class="divider"></li>
-                  <li><a href="@controllers.routes.Items.list()">All items</a></li>
+                  <li><a href="@routes.Items.list()">All items</a></li>
                 </ul>
               </li>
             </ul>

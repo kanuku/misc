@@ -1,0 +1,47 @@
+@(userForm: Form[User])(implicit flash: Flash, lang: Lang) 
+@import helper._ 
+@import helper.twitterBootstrap._
+
+@main(Messages("users.edit.title")){
+
+<h2>@Messages("users.edit.new")</h2>
+
+<form class="form-horizontal" action="@routes.Users.save()" method="post">
+  <div class="form-group">
+    <label class="control-label col-xs-3" for="name">@Messages("user.edit.username")</label>
+    <div class="col-xs-9">
+      <input type="text" class="form-control" id="name" name="username">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-xs-3" for="name">@Messages("user.edit.email")</label>
+    <div class="col-xs-9">
+      <input type="text" class="form-control" id="name" name="email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-xs-3" for="name">@Messages("user.edit.email2")</label>
+    <div class="col-xs-9">
+      <input type="text" class="form-control" id="name" name="email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-xs-3" for="name">@Messages("user.edit.password")</label>
+    <div class="col-xs-9">
+      <input type="password" class="form-control" id="name" name="password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-xs-3" for="name">@Messages("user.edit.password2")</label>
+    <div class="col-xs-9">
+      <input type="password" class="form-control" id="name" name="password">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-xs-offset-3 col-xs-9">
+      <input type="submit" class="btn btn-primary" value='@Messages("user.edit.command.submit")'> 
+      <a href="@routes.Users.index()" class="btn btn-default btn-sm">@Messages("user.edit.command.cancel") </a>  
+    </div>
+  </div>
+</form>
+ }

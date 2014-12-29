@@ -1,7 +1,7 @@
 package controllers
 
-import models.Item
 import dao.ItemDAO
+import models.Item
 import play.api.data._
 import play.api.data.Form
 import play.api.data.Forms._
@@ -10,39 +10,39 @@ import play.api.data.Forms.mapping
 import play.api.data.Forms.nonEmptyText
 import play.api.mvc.Action
 import play.api.mvc.Controller
-
+ 
 object Items extends Controller {
 
   def list = Action {
     implicit request =>
       val items = ItemDAO.findAll
-      Ok(views.html.items.list(items))
+      Ok(views.html.item.list(items))
   }
 
   def show(id: Long) = Action { implicit request =>
     ItemDAO.findById(id).map { item =>
-      Ok(views.html.items.details(item))
+      Ok(views.html.item.details(item))
     }.getOrElse(NotFound)
   }
 
-  def newItem = Action {
+  def edit = Action {
     implicit request =>
       val form = if (request.flash.get("error").isDefined)
         itemForm.bind(request.flash.data)
       else
         itemForm
-      Ok(views.html.items.edit(form))
+      Ok(views.html.item.edit(form))
 
   }
 
   def save = Action { implicit request =>
-    val newItemForm = itemForm.bindFromRequest()
-    newItemForm.fold(
+    val editForm = itemForm.bindFromRequest()
+    editForm.fold(
       hasErrors = { form =>
-        Redirect(routes.Items.newItem())
+        Redirect(routes.Items.edit())
       },
-      success = { newItem =>
-        val result=ItemDAO.insert(newItem)
+      success = { edit =>
+        val result=ItemDAO.insert(edit)
         Redirect(routes.Items.list)
       })
   }

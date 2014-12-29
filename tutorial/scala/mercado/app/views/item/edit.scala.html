@@ -1,0 +1,34 @@
+@(itemForm: Form[Item])(implicit flash: Flash, lang: Lang) 
+@import helper._ 
+@import helper.twitterBootstrap._
+
+@main(Messages("item.edit.title")){
+<h2>@Messages("item.edit.new")</h2>
+
+<form class="form-horizontal" action="@routes.Items.save()" method="post">
+  <div class="form-group">
+    <label class="control-label col-xs-3" for="name">@Messages("item.edit.name")</label>
+    <div class="col-xs-9">
+      <input type="text" class="form-control" id="name" name="name">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-xs-3" for="name">@Messages("item.edit.name")</label>
+    <div class="col-xs-9">
+      <input type="text" class="form-control" id="name" name="name">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-xs-3" for="description">@Messages("item.edit.description")</label>
+    <div class="col-xs-9">
+      <textarea rows="3" class="form-control" id="description" name="description"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-xs-offset-3 col-xs-9">
+      <input type="submit" class="btn btn-primary" value='@Messages("item.edit.command.submit")'> 
+      <a href="@routes.Users.index()" class="btn btn-default btn-sm">@Messages("item.edit.command.cancel") </a>  
+    </div>
+  </div>
+</form>
+ }
